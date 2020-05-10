@@ -1,0 +1,10 @@
+{%- assign product_url = product.url | remove: '/products/' -%}
+{% for block in section.blocks %}
+  {%- if block.type == 'per-product' -%}{%- if block.settings.product_url != blank -%}{%- assign product_url2 = block.settings.product_url -%}{%- else -%}{%- assign product_url2 = product_url -%}{%- endif -%}
+    {%- if product_url2 == product_url -%}
+    
+    {{your_code_gose_here}}
+    
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
